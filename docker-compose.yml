@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  authentication-service:
+    build: ./authentication-service
+    ports:
+      - "3001:3001"
+
+  file-system-service:
+    build: ./file-system-service
+    ports:
+      - "3002:3002"
+      
+  mysql-db-service:
+    build: ./mysql-db-service
+    ports:
+      - "3306:3306"
+
+  upload-video-app:
+    build: ./upload-video-app
+    ports:
+      - "8081:80"
+
+  video-streaming-app:
+    build: ./video-streaming-app
+    ports:
+      - "8082:80"
